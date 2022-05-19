@@ -1,23 +1,27 @@
-import './App.css';
 import Hero from './components/Hero';
 import Navbar from './components/Navbar';
 import Card from './components/Card';
-import katie from "./images/katie-zaferes.png"
+import cardsData from "./data"
 
 
 function App() {
+  
+  const cards = cardsData.map(card => {
+    return (
+      <Card 
+      key={card.id}
+      {...card}
+      />
+    )
+  })
+
   return (
     <>
     <Navbar />
     <Hero />
-    <Card 
-      img = {katie}
-      rating = {5.0}
-      reviewCount = {'('+6+')'}
-      country = "USA"
-      title = "Life lessons with Katie Zaferes"
-      price = {136}
-    />
+    <section className='cards-list'>
+    {cards}
+    </section>
     </>
   );
 }
