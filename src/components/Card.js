@@ -12,9 +12,9 @@ export default function Card(props) {
     return (
         <section className="card-section">
             {badgeText && <div className="card-badge" >{badgeText}</div>}
-            <img src={`../images/${props.coverImg}`} className="card-image" />
+            <img src={`../images/${props.coverImg}`} className="card-image" alt="" />
             <div className="card-details" >
-                <img src="../images/star.png" className="card-star" />
+                <img src="../images/star.png" className="card-star" alt="" />
                 <span>{props.stats.rating}</span>
                 <span>({props.stats.reviewCount}) • </span>
                 <span>{props.location}</span>
